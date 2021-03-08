@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "drf-spa-in-memory-token"
+version = "0.1.0"
+description = ""
+authors = ["kimuson <dev.kimuson@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+python-dotenv = "^0.15.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+mypyls = {url = "https://github.com/matangover/mypyls/archive/master.zip"}
+mypy = "^0.800"
+autopep8 = "^1.5.5"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
