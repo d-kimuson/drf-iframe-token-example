@@ -5,10 +5,11 @@ description = ""
 authors = ["kimuson <dev.kimuson@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.8"
 python-dotenv = "^0.15.0"
 Django = "^3.1.7"
 djangorestframework = "^3.12.2"
+django-allauth = "^0.44.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
