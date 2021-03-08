@@ -1,10 +1,22 @@
 from django.db import models
+from django.db.models.signals import post_save
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.utils.translation import gettext_lazy as _
 from django.core.validators import MinLengthValidator
 from django.utils import timezone
+from django.dispatch import receiver
+from rest_framework.authtoken.models import Token
 import uuid
-from typing import List
+from typing import List, Any, Optional
+
+from django.conf import settings
+
+
+# ユーザーを作成した後に、トークンを自動生成する
+@receiver(post_save, sender=settings.AUTH_USER_MODEL)
+def create_auth_token(sender: str, instance: Optional['User'] = None, created: bool = False, **kwargs: Any) -> None:
+    if created and instance is not None:
+        Token.objects.create(user=instance)
 
 
 class UserManager(BaseUserManager):
