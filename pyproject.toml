@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "drf-spa-in-memory-token"
+name = "drf-iframe-token-example"
 version = "0.1.0"
 description = ""
 authors = ["kimuson <dev.kimuson@gmail.com>"]
