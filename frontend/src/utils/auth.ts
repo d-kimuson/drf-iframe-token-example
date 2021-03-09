@@ -1,7 +1,7 @@
 export const appOrigin = "http://127.0.0.1:3000"
 export const authOrigin = "http://127.0.0.1:8000"
 
-export const autoLogin = (callback: (token: string) => void) => {
+export const autoLogin = (callback: (token: string) => void): void => {
   const iframe = window.document.createElement("iframe")
   iframe.style.display = "none"
 
