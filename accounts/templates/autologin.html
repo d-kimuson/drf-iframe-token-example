@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<head>
+  <title>auto login</title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    const token = "{{ token|escapejs }}"
+
+    function sendToken(window) {
+      const mainWindow = window.parent
+      mainWindow.postMessage(token, "http://127.0.0.1:3000")
+    }
+
+    sendToken(this)
+  </script>
+</body>
+
+</html>

@@ -17,10 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 
 import rest_framework.authtoken.views as auth_views
+from accounts.views import autologin
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
+    path('autologin/', autologin, name='autologin'),
     path('api-token-auth/', auth_views.obtain_auth_token),
     path('api/', include('accounts.api_urls'))
 ]
